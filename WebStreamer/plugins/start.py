@@ -26,4 +26,4 @@ async def start(event: NewMessage.Event):
     )
     
     if user.id == Var.OWNER_ID: return
-    await event.client.send_message(Var.OWNER_ID, f"#START\n**Name:** {event.sender.mention}\n**Username:** @{event.sender.username or 'None'}\n**ID:** `{event.sender.id}`")
+    await event.client.send_message(Var.OWNER_ID, f"#START\n**Name:** [{user.first_name}](tg://user?id={user.id})\n**Username:** @{user.username or 'None'}\n**ID:** `{user.id}`")
