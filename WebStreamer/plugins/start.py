@@ -20,7 +20,7 @@ async def start(event: NewMessage.Event):
         )
     await event.message.reply(
         message=f'Hi <a href="tg://user?id={user.id}">{user.first_name}</a>, Send me a file to get an instant stream link.',
-        buttons=[[Button.url("Dev", "https://t.me/feelded")], [Button.url("Updates", "https://t.me/execal")]]
+        buttons=[[Button.url("Dev", "https://t.me/feelded")], [Button.url("Updates", "https://t.me/execal")]],
         link_preview=False,
         parse_mode=html
     )
