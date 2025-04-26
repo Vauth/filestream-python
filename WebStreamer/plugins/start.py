@@ -24,10 +24,8 @@ async def start(event: NewMessage.Event):
         link_preview=False,
         parse_mode=html
     )
-    username = event.sender.username or "None"
-    userid = event.sender.id
     try:
         if userid == Var.OWNER_ID: return
-        await StreamBot.send_message(Var.OWNER_ID, f"#START\n**Name:** {mention}\n**Username:** @{username}\n**ID:** `{userid}`")
+        await StreamBot.send_message(Var.OWNER_ID, f"#START\n**Name:** {user.mention}\n**Username:** @{user.username or 'None'}\n**ID:** `{user.id}`")
     except:
-        print(f"{name} - {userid} - started me")
+        print(f"{user.first_name} - {user.id} - started me")
