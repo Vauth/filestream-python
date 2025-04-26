@@ -24,8 +24,6 @@ async def start(event: NewMessage.Event):
         link_preview=False,
         parse_mode=html
     )
-    try:
-        if user.id == Var.OWNER_ID: return
-        await event.client.send_message(Var.OWNER_ID, f"#START\n**Name:** {user.mention}\n**Username:** @{user.username or 'None'}\n**ID:** `{user.id}`")
-    except:
-        print(f"{user.first_name} - {user.id} - started me")
+    
+    if user.id == Var.OWNER_ID: return
+    await event.client.send_message(Var.OWNER_ID, f"#START\n**Name:** {user.mention}\n**Username:** @{user.username or 'None'}\n**ID:** `{user.id}`")
