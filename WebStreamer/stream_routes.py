@@ -17,7 +17,7 @@ from WebStreamer.utils.paralleltransfer import ParallelTransferrer
 routes = web.RouteTableDef()
 class_cache = {}
 
-@routes.get("/status", allow_head=True)
+@routes.get("/", allow_head=True)
 async def root_route_handler(_: web.Request):
     return web.json_response(
         {
